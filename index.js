@@ -8,7 +8,15 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+const createDate = (dateList, index = null) => {
+  const listOfDates = dateList.map(date => Date.parse(date) / 1000);
+
+  if (! (index in dates)) {
+    return listOfDates.sort().join('-');
+  }
+
+  return `${listOfDates[index]}`;
+};
 
 // ! JANGAN DIMODIFIKASI
 (() => {
